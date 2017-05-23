@@ -4,15 +4,17 @@ MIT Licensed
 */
 
 .super-search {
-  background-color: $super-search;
   z-index: 999;
   transition: 0.2s ease;
   visibility: hidden;
   opacity: 0;
   position: fixed;
-  width: 100%;
-  height: 100%;
-  will-change: transform, opacity;
+  width: 30%;
+  height: 30%;
+  position: absolute;
+  right: 0;
+  top: 50px;
+  will-change: transform, opacity; 
 }
 .super-search__close-btn {
   float: right;
@@ -25,12 +27,14 @@ MIT Licensed
   transform: translateY(0);
 }
 .super-search__results {
-  text-align: center;
+    text-align: center;
+  background: #6997e0;
   list-style: none;
   padding: 0;
   overflow-x: hidden;
-  height: calc(100% - 110px);
-  transition: 0.2s ease;
+  height: calc(100%);
+  width: calc(100%);
+  transition: 0.2s ease; 
 }
 .super-search__results.is-hidden {
   opacity: 0;
@@ -40,12 +44,17 @@ MIT Licensed
 .super-search__results > li > a {
   display: block;
   position: relative;
+  font-family: "Courier New";
+  color: blue !important;
+  text-decoration: none;
   background-color: #f9f9f9;
   color: #666;
   padding: 17px;
   margin: 12px 14px;
+  border-radius: 10px;
   box-shadow: 0 3px 4px rgba(0,0,0,0.1);
 }
+
 .super-search__result-date {
   color: #BBB;
   position: absolute;
@@ -54,4 +63,16 @@ MIT Licensed
 .super-search.is-active {
   opacity: 1;
   visibility: visible;
+}
+
+@media (max-width: 736px) {
+
+  .super-search {
+    width: 100%;
+    height: 50%;
+  }
+  
+  #js-search__results {
+  border-bottom: 10px solid #6997e0;
+  }
 }
